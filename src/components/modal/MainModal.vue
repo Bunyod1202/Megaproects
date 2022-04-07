@@ -39,7 +39,7 @@ export default defineComponent({
     RegisterModal,
   },
   setup() {
-    const confirm = ref(false);
+    const confirm = ref(true);
     let ini = ref(true);
     return {
       confirm,

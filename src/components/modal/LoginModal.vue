@@ -67,7 +67,7 @@ export default defineComponent({
       inputRef,
       btnSave() {
         if (
-          lastName.value == myName.value ||
+          lastName.value == myName.value &&
           password.value == myPassword.value
         ) {
           add.value = false;
