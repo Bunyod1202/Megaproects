@@ -8,6 +8,5 @@ export default {};
 
 <style lang="scss" scoped>
 .card {
-  z-index: 2;
 }
 </style>

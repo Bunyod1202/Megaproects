@@ -49,21 +49,23 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
-.card-login {
-  position: relative;
-  width: 500px;
-  min-height: 200px;
-  padding: 20px;
-  .register-btn {
-    border-top: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .btn {
-      margin-top: 10px;
-      border-radius: 8px;
-      width: 150px;
-      height: 30px;
+.dialog {
+  .card-login {
+    position: relative;
+    width: 500px;
+    min-height: 200px;
+    padding: 20px;
+    .register-btn {
+      border-top: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .btn {
+        margin-top: 10px;
+        border-radius: 8px;
+        width: 150px;
+        height: 30px;
+      }
     }
   }
 }

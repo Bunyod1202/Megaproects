@@ -1,4 +1,5 @@
 <template>
+  <MainModal />
   <div class="fon" :class="{ show: hover }">
     <div class="tv" v-if="off">
       <Carusel />
@@ -40,10 +41,13 @@
 <script>
 import { defineComponent, ref } from "vue";
 import Carusel from "src/layouts/Carusel";
+import MainModal from "src/components/modal/MainModal";
 export default defineComponent({
   name: "MainLayout",
 
-  components: {},
+  components: {
+    MainModal,
+  },
 
   setup() {
     let off = ref(true);
@@ -75,7 +79,7 @@ export default defineComponent({
   width: 100vw;
   height: 100vh;
   position: fixed;
-  z-index: 1000;
+
   &.show {
     background-color: rgb(26, 22, 22) !important;
   }

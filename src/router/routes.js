@@ -1,8 +1,8 @@
 const routes = [
   {
     path: "/",
-    component: () => import("src/layouts/Home.vue"),
-    children: [{ path: "", component: () => import("src/pages/Index.vue") }],
+    component: () => import("layouts/Home.vue"),
+    children: [{ path: "", component: () => import("pages/Index.vue") }],
   },
 
   // Always leave this as last one,
