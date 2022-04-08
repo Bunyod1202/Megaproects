@@ -1,10 +1,13 @@
 <template>
-  <q-page class="flex flex-center"> <MainModal /> </q-page>
+  <div>
+    <q-page class="flex flex-center">
+      <MainModal />
+    </q-page>
+  </div>
 </template>
 
 <script>
-import { defineComponent } from "vue";
-import { ref } from "vue";
+import { defineComponent, ref } from "vue";
 import MainModal from "src/components/modal/MainModal";
 export default defineComponent({
   components: { MainModal },
@@ -14,3 +17,4 @@ export default defineComponent({
   },
 });
 </script>
+<style lang="scss" scoped></style>

@@ -52,6 +52,7 @@ export default defineComponent({
 .card-login {
   position: relative;
   width: 500px;
+  min-height: 200px;
   padding: 20px;
   .register-btn {
     border-top: 1px solid black;

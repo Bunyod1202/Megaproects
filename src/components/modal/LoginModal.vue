@@ -41,7 +41,8 @@
   </div>
   <div class="welcome" v-else>
     <q-btn class="btn" color="white" text-color="black" v-close-popup
-      >добро пожаловать</q-btn
+      ><img src="icons/favicon-32x32.png" alt="" style="width: 100px" />
+      <h3>Bunyod</h3></q-btn
     >
   </div>
 </template>
@@ -86,6 +87,7 @@ export default defineComponent({
 .card-login {
   position: relative;
   width: 500px;
+
   padding: 20px;
   .items-center {
     .text {
@@ -120,15 +122,25 @@ export default defineComponent({
   }
 }
 .welcome {
+  left: 0px;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  height: 66%;
-  width: 96%;
+  height: 90%;
+  width: 100%;
   background-color: #fff;
   z-index: 2;
   .btn {
+    width: 95%;
+    height: 100%;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 10px 5px;
+    &:hover {
+      box-shadow: 0px 0px 10px 5px gray;
+    }
   }
 }
 </style>
