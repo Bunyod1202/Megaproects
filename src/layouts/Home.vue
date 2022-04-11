@@ -5,52 +5,52 @@
       <div class="well-come" v-show="wellcome">
         <div class="name">Well come <q-spinner color="white" size="1em" /></div>
       </div>
-      <div class="nav">
-        <div class="nav-item">
-          <div class="nav-link">
-            <div class="logo">
-              <img src="icons/favicon-32x32.png" alt="" />
-              <h4>Bunyod</h4>
+      <div class="sayd">
+        <div class="nav">
+          <div class="nav-item">
+            <div class="nav-link">
+              <div class="logo">
+                <img src="icons/favicon-32x32.png" alt="" />
+                <h4>Bunyod</h4>
+              </div>
+            </div>
+          </div>
+          <div class="nav-item">
+            <div class="nav-link">
+              <div class="phone-number">
+                <a href=""
+                  ><q-icon class="phone-icon" name="phone" /> +998(90)
+                  099-29-26</a
+                >
+              </div>
             </div>
           </div>
         </div>
-        <div class="nav-item">
-          <div class="nav-link">
-            <div class="phone-number">
-              <q-icon class="phone-icon" name="phone" /> +998(90) 099-29-26
-            </div>
-          </div>
+        <div class="text">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus
+          sunt magnam, quia laudantium rem molestiae aspernatur ab nemo modi
+          possimus, omnis delectus totam blanditiis ex ea quas cumque recusandae
+          ipsum repudiandae quo consequatur quam numquam eos. Qui illo
+          exercitationem, accusamus ducimus ipsam minima. Odio, ea! In sequi
+          architecto ipsa atque, autem fuga officiis repellendus molestiae
+          aspernatur beatae distinctio quibusdam laborum perferendis error quo
+          at, odit tempora praesentium eum modi. Et vitae, quisquam totam eos
+          adipisci aliquam ab. Vero ex cupiditate similique. Odit illo
+          consequatur quasi dicta qui omnis quae ad itaque accusantium
+          cupiditate nisi explicabo obcaecati sequi, fuga at commodi. Lorem,
+          ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minus
+          dignissimos explicabo natus nemo? Earum eos alias ad dolore repellat
+          praesentium labore ducimus consequuntur eum dicta, et voluptate
+          accusamus illum excepturi dolorum doloribus quisquam. Ipsum alias hic,
+          iste exercitationem, architecto quae placeat fuga repellendus, tempora
+          tenetur id. Repellat, numquam eligendi laborum impedit, mollitia neque
+          distinctio aut porro architecto labore dicta voluptatem nisi inventore
+          nostrum! Fugit explicabo saepe quam. Facilis ab officiis dolor ratione
+          quae fugit sed quidem beatae accusamus aperiam itaque eligendi vero a,
+          earum laboriosam perferendis quia eaque magni rem cupiditate unde?
+          Excepturi laudantium reiciendis nesciunt sit cum odio.
         </div>
       </div>
-      <q-carousel
-        animated
-        v-model="slide"
-        navigation
-        infinite
-        :autoplay="autoplay"
-        arrows
-        transition-prev="slide-right"
-        transition-next="slide-left"
-        @mouseenter="autoplay = false"
-        @mouseleave="autoplay = true"
-      >
-        <q-carousel-slide
-          :name="1"
-          img-src="https://cdn.quasar.dev/img/mountains.jpg"
-        />
-        <q-carousel-slide
-          :name="2"
-          img-src="https://cdn.quasar.dev/img/parallax1.jpg"
-        />
-        <q-carousel-slide
-          :name="3"
-          img-src="https://cdn.quasar.dev/img/parallax2.jpg"
-        />
-        <q-carousel-slide
-          :name="4"
-          img-src="https://cdn.quasar.dev/img/quasar.jpg"
-        />
-      </q-carousel>
     </div>
     <div class="tv-off" v-else>
       <div class="well-come" v-show="wellcome">
@@ -65,45 +65,40 @@
       <div class="btn-group">
         <q-btn
           class="btn"
+          :class="{ color: hover }"
           :disabled="disabled"
           rounded
-          color="white"
-          text-color="black"
           >Menu</q-btn
         >
         <q-btn
           class="btn"
+          :class="{ color: hover }"
           :disabled="disabled"
           rounded
-          color="white"
-          text-color="black"
           @click="btnClickLight"
         >
           <q-icon name="light_mode"></q-icon>
         </q-btn>
         <q-btn
           class="btn"
+          :class="{ color: hover }"
           :disabled="disabled"
           rounded
-          color="white"
-          text-color="black"
         >
           <q-icon name="style" />
         </q-btn>
         <q-btn
           class="btn"
+          :class="{ color: hover }"
           :disabled="disabled"
           rounded
-          color="white"
-          text-color="black"
           >Auto</q-btn
         >
         <q-btn
           class="btn glossy"
+          :class="{ color: hover }"
           round
-          color="white"
           @click="off"
-          text-color="black"
           :disabled="disable"
           ><q-icon name="power_settings_new"
         /></q-btn>
@@ -224,6 +219,10 @@ export default defineComponent({
             margin-right: 50px;
             font-weight: bold;
             font-size: 20px;
+            a {
+              text-decoration: none;
+              color: #000;
+            }
             .phone-icon {
               font-size: 30px;
               animation-name: example;
@@ -286,7 +285,13 @@ export default defineComponent({
       justify-content: center;
 
       .btn {
+        background-color: #000;
+        color: #fff;
         margin-left: 15px;
+        &.color {
+          background-color: #fff !important;
+          color: #000 !important;
+        }
       }
     }
     .nul {
@@ -296,25 +301,14 @@ export default defineComponent({
 }
 @media (max-width: 500px) {
   .fon {
-    top: 0;
-    left: 0;
-    position: absolute;
-    background-color: rgb(83, 81, 81);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-
-    &.show {
-      background-color: rgb(26, 22, 22) !important;
-    }
     .tv {
       width: 95vw;
-      min-height: 65vh;
+      min-height: 520px;
       margin-left: 10px;
       margin-top: 10px;
       .well-come {
         width: 95vw;
-        min-height: 65vh;
+        min-height: 520px;
         background-color: rgba(72, 110, 180, 0.753);
         .name {
           font-size: 50px;
@@ -322,31 +316,36 @@ export default defineComponent({
           font-weight: bolder;
         }
       }
-      .nav {
-        height: 200px;
-        display: block;
+      .sayd {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 520px;
+        .nav {
+          height: 200px;
+          display: block;
 
-        .nav-item {
-          .nav-link {
-            .logo {
-              margin-left: 5%;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              img {
-                width: 50px;
-                height: 50px;
+          .nav-item {
+            .nav-link {
+              .logo {
+                margin-left: 5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                  width: 50px;
+                  height: 50px;
+                }
+                h4 {
+                  margin-right: 5px;
+                  font-weight: bolder;
+                }
               }
-              h4 {
-                margin-right: 5px;
-                font-weight: bolder;
+              .phone-number {
+                margin-right: 50px;
+                font-weight: bold;
+                font-size: 20px;
+                margin-left: 24%;
               }
-            }
-            .phone-number {
-              margin-right: 50px;
-              font-weight: bold;
-              font-size: 20px;
-              margin-left: 24%;
             }
           }
         }
@@ -354,12 +353,12 @@ export default defineComponent({
     }
     .tv-off {
       width: 95vw;
-      min-height: 65vh;
+      min-height: 520px;
       margin-left: 10px;
       margin-top: 10px;
       .well-come {
         width: 95vw;
-        min-height: 65vh;
+        min-height: 520px;
         background-color: rgba(72, 180, 106, 0.753);
         .name {
           font-size: 50px;
