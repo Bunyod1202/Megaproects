@@ -96,7 +96,7 @@
         >
         <q-btn
           class="btn glossy"
-          :class="{ color: hover }"
+          :class="{ color: hover, ban: offs }"
           round
           @click="off"
           :disabled="disable"
@@ -288,90 +288,29 @@ export default defineComponent({
         background-color: #000;
         color: #fff;
         margin-left: 15px;
+        &:hover {
+          color: #2dfc52;
+          filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52)
+            drop-shadow(0 0 15px #2dfc52);
+        }
         &.color {
           background-color: #fff !important;
-          color: #000 !important;
+          color: #000;
         }
+        &.ban {
+          color: #2dfc52;
+          filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52)
+            drop-shadow(0 0 15px #2dfc52);
+        }
+      }
+      .glossy {
+        color: red;
+        filter: drop-shadow(0 0 2px red) drop-shadow(0 0 5px red)
+          drop-shadow(0 0 15px red);
       }
     }
     .nul {
       width: 350px;
-    }
-  }
-}
-@media (max-width: 500px) {
-  .fon {
-    .tv {
-      width: 95vw;
-      min-height: 520px;
-      margin-left: 10px;
-      margin-top: 10px;
-      .well-come {
-        width: 95vw;
-        min-height: 520px;
-        background-color: rgba(72, 110, 180, 0.753);
-        .name {
-          font-size: 50px;
-          color: #fff;
-          font-weight: bolder;
-        }
-      }
-      .sayd {
-        overflow-x: hidden;
-        overflow-y: scroll;
-        height: 520px;
-        .nav {
-          height: 200px;
-          display: block;
-
-          .nav-item {
-            .nav-link {
-              .logo {
-                margin-left: 5%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                img {
-                  width: 50px;
-                  height: 50px;
-                }
-                h4 {
-                  margin-right: 5px;
-                  font-weight: bolder;
-                }
-              }
-              .phone-number {
-                margin-right: 50px;
-                font-weight: bold;
-                font-size: 20px;
-                margin-left: 24%;
-              }
-            }
-          }
-        }
-      }
-    }
-    .tv-off {
-      width: 95vw;
-      min-height: 520px;
-      margin-left: 10px;
-      margin-top: 10px;
-      .well-come {
-        width: 95vw;
-        min-height: 520px;
-        background-color: rgba(72, 180, 106, 0.753);
-        .name {
-          font-size: 50px;
-          color: #fff;
-          font-weight: bolder;
-        }
-      }
-    }
-    .buttoms {
-      display: block;
-      .logo {
-        margin-left: 40%;
-      }
     }
   }
 }
@@ -445,6 +384,82 @@ export default defineComponent({
     }
     .buttoms {
       display: flex;
+      .logo {
+        margin-left: 40%;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .fon {
+    .tv {
+      width: 95vw;
+      min-height: 520px;
+      margin-left: 10px;
+      margin-top: 10px;
+      .well-come {
+        width: 95vw;
+        min-height: 520px;
+        background-color: rgba(72, 110, 180, 0.753);
+        .name {
+          font-size: 50px;
+          color: #fff;
+          font-weight: bolder;
+        }
+      }
+      .sayd {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 520px;
+        .nav {
+          height: 200px;
+          display: block;
+
+          .nav-item {
+            .nav-link {
+              .logo {
+                margin-left: 5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                  width: 50px;
+                  height: 50px;
+                }
+                h4 {
+                  margin-right: 5px;
+                  font-weight: bolder;
+                }
+              }
+              .phone-number {
+                margin-right: 50px;
+                font-weight: bold;
+                font-size: 20px;
+                margin-left: 24%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .tv-off {
+      width: 95vw;
+      min-height: 520px;
+      margin-left: 10px;
+      margin-top: 10px;
+      .well-come {
+        width: 95vw;
+        min-height: 520px;
+        background-color: rgba(72, 180, 106, 0.753);
+        .name {
+          font-size: 50px;
+          color: #fff;
+          font-weight: bolder;
+        }
+      }
+    }
+    .buttoms {
+      display: block;
       .logo {
         margin-left: 40%;
       }
