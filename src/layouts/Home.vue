@@ -375,4 +375,80 @@ export default defineComponent({
     }
   }
 }
+@media (max-width: 1000px) {
+  .fon {
+    .tv {
+      max-width: 98vw;
+      min-height: 270px;
+      margin-left: 10px;
+      margin-top: 10px;
+      .well-come {
+        width: 98vw;
+        min-height: 270px;
+        background-color: rgba(72, 110, 180, 0.753);
+        .name {
+          font-size: 50px;
+          color: #fff;
+          font-weight: bolder;
+        }
+      }
+      .sayd {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: 270px;
+        .nav {
+          height: 200px;
+          display: block;
+
+          .nav-item {
+            .nav-link {
+              .logo {
+                margin-left: 5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                  width: 50px;
+                  height: 50px;
+                }
+                h4 {
+                  margin-right: 5px;
+                  font-weight: bolder;
+                }
+              }
+              .phone-number {
+                margin-right: 50px;
+                font-weight: bold;
+                font-size: 20px;
+                margin-left: 40%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .tv-off {
+      max-width: 98vw;
+      min-height: 270px;
+      margin-left: 10px;
+      margin-top: 10px;
+      .well-come {
+        min-width: 98vw;
+        min-height: 270px;
+        background-color: rgba(72, 180, 106, 0.753);
+        .name {
+          font-size: 50px;
+          color: #fff;
+          font-weight: bolder;
+        }
+      }
+    }
+    .buttoms {
+      display: flex;
+      .logo {
+        margin-left: 40%;
+      }
+    }
+  }
+}
 </style>
