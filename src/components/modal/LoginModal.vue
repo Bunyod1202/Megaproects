@@ -45,6 +45,17 @@
       <h3>Bunyod</h3></q-btn
     >
   </div>
+  <div class="welcome" v-show="user">
+    <q-btn
+      class="btn"
+      color="white"
+      to="/Carusel"
+      text-color="black"
+      v-close-popup
+      ><img src="icons/favicon-32x32.png" alt="" style="width: 100px" />
+      <h3>Bunyod user</h3></q-btn
+    >
+  </div>
 </template>
 
 <script>
@@ -53,10 +64,13 @@ import { defineComponent, ref } from "vue";
 export default defineComponent({
   setup() {
     const add = ref(true);
+    const user = ref(false);
     let lastName = ref("");
     let password = ref("");
     let myPassword = ref("2002");
     let myName = ref("Bunyod");
+    let userPassword = ref("bunyod2002");
+    let userName = ref("Bunyod");
     const inputRef = ref(null);
     return {
       lastName,
@@ -65,6 +79,7 @@ export default defineComponent({
       myName,
       isPwd: ref(true),
       add,
+      user,
       inputRef,
       btnSave() {
         if (
@@ -72,6 +87,12 @@ export default defineComponent({
           password.value == myPassword.value
         ) {
           add.value = false;
+        }
+        if (
+          lastName.value == userName.value &&
+          password.value == userPassword.value
+        ) {
+          user.value = true;
         }
         reset();
       },

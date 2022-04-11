@@ -5,7 +5,52 @@
       <div class="well-come" v-show="wellcome">
         <div class="name">Well come <q-spinner color="white" size="1em" /></div>
       </div>
-      <Carusel />
+      <div class="nav">
+        <div class="nav-item">
+          <div class="nav-link">
+            <div class="logo">
+              <img src="icons/favicon-32x32.png" alt="" />
+              <h4>Bunyod</h4>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item">
+          <div class="nav-link">
+            <div class="phone-number">
+              <q-icon class="phone-icon" name="phone" /> +998(90) 099-29-26
+            </div>
+          </div>
+        </div>
+      </div>
+      <q-carousel
+        animated
+        v-model="slide"
+        navigation
+        infinite
+        :autoplay="autoplay"
+        arrows
+        transition-prev="slide-right"
+        transition-next="slide-left"
+        @mouseenter="autoplay = false"
+        @mouseleave="autoplay = true"
+      >
+        <q-carousel-slide
+          :name="1"
+          img-src="https://cdn.quasar.dev/img/mountains.jpg"
+        />
+        <q-carousel-slide
+          :name="2"
+          img-src="https://cdn.quasar.dev/img/parallax1.jpg"
+        />
+        <q-carousel-slide
+          :name="3"
+          img-src="https://cdn.quasar.dev/img/parallax2.jpg"
+        />
+        <q-carousel-slide
+          :name="4"
+          img-src="https://cdn.quasar.dev/img/quasar.jpg"
+        />
+      </q-carousel>
     </div>
     <div class="tv-off" v-else>
       <div class="well-come" v-show="wellcome">
@@ -69,7 +114,6 @@
 
 <script>
 import { defineComponent, ref } from "vue";
-import Carusel from "src/layouts/Carusel";
 import MainModal from "src/components/modal/MainModal";
 export default defineComponent({
   components: {
@@ -82,6 +126,8 @@ export default defineComponent({
     let wellcome = ref(false);
     let disabled = ref(true);
     let disable = ref(false);
+    let slide = ref(1);
+    let autoplay = ref(true);
 
     function btnClickLight() {
       hover.value = !hover.value;
@@ -110,6 +156,8 @@ export default defineComponent({
       disable,
       off,
       wellcome,
+      slide,
+      autoplay,
     };
   },
 });
@@ -128,6 +176,7 @@ export default defineComponent({
     background-color: rgb(26, 22, 22) !important;
   }
   .tv {
+    overflow: hidden;
     transition: 2s linear;
     border-radius: 3px;
     margin-top: 30px;
@@ -136,16 +185,64 @@ export default defineComponent({
     max-width: 95vw;
     min-height: 85vh;
     .well-come {
-      max-width: 95vw;
+      z-index: 10;
+      position: absolute;
+      width: 95vw;
       min-height: 85vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgba(0, 0, 0, 0.753);
+      background-color: rgb(0, 0, 0);
       .name {
         font-size: 100px;
-        color: #000;
+        color: #fff;
         font-weight: bolder;
+      }
+    }
+    .nav {
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .nav-item {
+        .nav-link {
+          .logo {
+            margin-left: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 50px;
+              height: 50px;
+            }
+            h4 {
+              margin-right: 5px;
+              font-weight: bolder;
+            }
+          }
+          .phone-number {
+            margin-right: 50px;
+            font-weight: bold;
+            font-size: 20px;
+            .phone-icon {
+              font-size: 30px;
+              animation-name: example;
+              animation-duration: 2s;
+              animation-iteration-count: infinite;
+            }
+            @keyframes example {
+              0% {
+                transform: rotate(0deg);
+              }
+              50% {
+                transform: rotate(50deg);
+              }
+              100% {
+                transform: rotate(0deg);
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -164,7 +261,7 @@ export default defineComponent({
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgba(94, 86, 86, 0.451);
+      background-color: rgba(94, 86, 86, 0.753);
       .name {
         font-size: 100px;
         color: #fff;
@@ -223,6 +320,35 @@ export default defineComponent({
           font-size: 50px;
           color: #fff;
           font-weight: bolder;
+        }
+      }
+      .nav {
+        height: 200px;
+        display: block;
+
+        .nav-item {
+          .nav-link {
+            .logo {
+              margin-left: 5%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 50px;
+                height: 50px;
+              }
+              h4 {
+                margin-right: 5px;
+                font-weight: bolder;
+              }
+            }
+            .phone-number {
+              margin-right: 50px;
+              font-weight: bold;
+              font-size: 20px;
+              margin-left: 24%;
+            }
+          }
         }
       }
     }
