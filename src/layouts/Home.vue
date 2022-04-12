@@ -26,30 +26,7 @@
             </div>
           </div>
         </div>
-        <div class="text">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus
-          sunt magnam, quia laudantium rem molestiae aspernatur ab nemo modi
-          possimus, omnis delectus totam blanditiis ex ea quas cumque recusandae
-          ipsum repudiandae quo consequatur quam numquam eos. Qui illo
-          exercitationem, accusamus ducimus ipsam minima. Odio, ea! In sequi
-          architecto ipsa atque, autem fuga officiis repellendus molestiae
-          aspernatur beatae distinctio quibusdam laborum perferendis error quo
-          at, odit tempora praesentium eum modi. Et vitae, quisquam totam eos
-          adipisci aliquam ab. Vero ex cupiditate similique. Odit illo
-          consequatur quasi dicta qui omnis quae ad itaque accusantium
-          cupiditate nisi explicabo obcaecati sequi, fuga at commodi. Lorem,
-          ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit minus
-          dignissimos explicabo natus nemo? Earum eos alias ad dolore repellat
-          praesentium labore ducimus consequuntur eum dicta, et voluptate
-          accusamus illum excepturi dolorum doloribus quisquam. Ipsum alias hic,
-          iste exercitationem, architecto quae placeat fuga repellendus, tempora
-          tenetur id. Repellat, numquam eligendi laborum impedit, mollitia neque
-          distinctio aut porro architecto labore dicta voluptatem nisi inventore
-          nostrum! Fugit explicabo saepe quam. Facilis ab officiis dolor ratione
-          quae fugit sed quidem beatae accusamus aperiam itaque eligendi vero a,
-          earum laboriosam perferendis quia eaque magni rem cupiditate unde?
-          Excepturi laudantium reiciendis nesciunt sit cum odio.
-        </div>
+        <Carusel />
       </div>
     </div>
     <div class="tv-off" v-else>
@@ -110,9 +87,11 @@
 <script>
 import { defineComponent, ref } from "vue";
 import MainModal from "src/components/modal/MainModal";
+import Carusel from "src/layouts/Carusel";
 export default defineComponent({
   components: {
     MainModal,
+    Carusel,
   },
 
   setup() {

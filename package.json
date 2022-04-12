@@ -15,7 +15,9 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "quasar": "^2.0.0",
+    "swiper": "^8.1.0",
     "vue": "^3.0.0",
+    "vue-awesome-swiper": "^5.0.1",
     "vue-router": "^4.0.0",
     "vuex": "^4.0.1"
   },
