@@ -10,7 +10,8 @@
         ref="inputRef"
         v-model="lastName"
         label="имя"
-        :rules="[input1 === true || 'Please use maximum 3 characters']"
+        error-message="логин не сущесвуют "
+        :error="!isValid"
       />
       <q-input
         class="input input-password"
@@ -19,7 +20,8 @@
         v-model="password"
         label="пароль "
         :type="isPwd ? 'password' : 'text'"
-        :rules="[input2 === true || 'Please use maximum 3 characters']"
+        :error="!isValideyta"
+        error-message="пароль не правильно "
       >
         <template v-slot:append>
           <q-icon
@@ -53,7 +55,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, computed } from "vue";
 
 export default defineComponent({
   setup() {
@@ -77,7 +79,20 @@ export default defineComponent({
       add,
       user,
       inputRef,
-      input,
+      input1,
+      input2,
+      isValid: computed(
+        () =>
+          lastName.value == "" ||
+          input1.value == false ||
+          lastName.value == myName.value
+      ),
+      isValideyta: computed(
+        () =>
+          password.value == "" ||
+          input1.value == false ||
+          password.value == myPassword.value
+      ),
       btnSave() {
         if (
           lastName.value == myName.value &&
@@ -85,7 +100,17 @@ export default defineComponent({
         ) {
           add.value = false;
         } else {
-          input1 = true;
+          input1.value = true;
+          setTimeout(() => {
+            if (lastName.value == myName.value) {
+            } else {
+              lastName.value = "";
+            }
+            if (password.value == myPassword.value) {
+            } else {
+              password.value = "";
+            }
+          }, 2000);
         }
         if (
           lastName.value == userName.value &&
@@ -93,8 +118,11 @@ export default defineComponent({
         ) {
           user.value = true;
         } else {
-          input2 = true;
+          input2.value = true;
         }
+        setTimeout(() => {
+          input1.value = false;
+        }, 2000);
         reset();
       },
       reset() {
@@ -121,17 +149,6 @@ export default defineComponent({
   }
   .input-group {
     .input {
-      margin-top: 15px;
-      color: #000;
-      border-radius: 8px;
-      box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.5);
-      background-color: rgba(255, 255, 255, 0.2);
-      border: none;
-      outline: none;
-      border-radius: 35px;
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      border-right: 1px solid rgba(255, 255, 255, 0.2);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
   }
   .btn-save {
@@ -208,5 +225,18 @@ export default defineComponent({
 .q-field--labeled .q-field__prefix,
 .q-field--labeled .q-field__suffix {
   background-color: rgba(255, 255, 255, 0);
+}
+.q-field--standout .q-field__control {
+  margin-top: 15px;
+  color: #000;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 </style>

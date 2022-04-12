@@ -52,6 +52,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .dialog {
   .card-login {
+    border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
@@ -81,6 +82,7 @@ export default defineComponent({
   .blok-left,
   .blok-top,
   .blok-one {
+    border-radius: 15px;
     position: absolute;
     backdrop-filter: blur(5px);
     background-color: rgba(255, 255, 255, 0.1);
