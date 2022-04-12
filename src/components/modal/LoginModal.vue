@@ -32,7 +32,10 @@
       ></q-input>
     </q-card-section>
     <q-card-section class="btn-save">
-      <q-btn class="btn" @click="btnSave" label="вайти " />
+      <q-btn class="btn" @click="btnSave"
+        ><div v-if="loder">вайти</div>
+        <div v-else><q-spinner-gears color="blakc" size="1em" /></div
+      ></q-btn>
     </q-card-section>
   </div>
   <div class="welcome" v-else>
@@ -62,7 +65,7 @@ export default defineComponent({
     const add = ref(true);
     const user = ref(false);
     const input1 = ref(false);
-    const input2 = ref(false);
+    const loder = ref(true);
     let lastName = ref("");
     let password = ref("");
     let myPassword = ref("2002");
@@ -80,7 +83,7 @@ export default defineComponent({
       user,
       inputRef,
       input1,
-      input2,
+      loder,
       isValid: computed(
         () =>
           lastName.value == "" ||
@@ -98,8 +101,13 @@ export default defineComponent({
           lastName.value == myName.value &&
           password.value == myPassword.value
         ) {
-          add.value = false;
+          loder.value = false;
+          setTimeout(() => {
+            loder.value = true;
+            add.value = false;
+          }, 3000);
         } else {
+          loder.value = false;
           input1.value = true;
           setTimeout(() => {
             if (lastName.value == myName.value) {
@@ -110,6 +118,7 @@ export default defineComponent({
             } else {
               password.value = "";
             }
+            loder.value = true;
           }, 2000);
         }
         if (
@@ -117,8 +126,6 @@ export default defineComponent({
           password.value == userPassword.value
         ) {
           user.value = true;
-        } else {
-          input2.value = true;
         }
         setTimeout(() => {
           input1.value = false;
