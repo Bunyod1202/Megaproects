@@ -28,7 +28,7 @@
       ></q-input>
     </q-card-section>
     <q-card-section class="btn-save">
-      <q-btn rounded class="btn" @click="btnSave" label="вайти " />
+      <q-btn class="btn" @click="btnSave" label="вайти " />
     </q-card-section>
   </div>
   <div class="welcome" v-else>
@@ -132,13 +132,16 @@ export default defineComponent({
     .btn {
       background-color: white;
       border-radius: 35px;
-
       color: black;
-      border-radius: 8px;
+
       width: 100px;
       height: 30px;
-      &::before {
-        border-radius: 35px;
+
+      &:hover {
+        color: white !important;
+        background-color: #000;
+        filter: drop-shadow(0 0 2px white) drop-shadow(0 0 5px white)
+          drop-shadow(0 0 15px white);
       }
     }
   }

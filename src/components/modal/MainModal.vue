@@ -1,11 +1,11 @@
 <template>
   <div>
     <q-dialog class="dialog" v-model="confirm" persistent>
-      <div class="blok-right">fergeddddddddddrrte</div>
-      <div class="blok-bottom">fergrerte</div>
-      <div class="blok-left">fergredddddddrte</div>
-      <div class="blok-one">fergrerte</div>
-      <div class="blok-top">fergrerte</div>
+      <div class="blok-right"></div>
+      <div class="blok-bottom"></div>
+      <div class="blok-left"></div>
+      <div class="blok-one"></div>
+      <div class="blok-top"></div>
       <q-card class="card-login">
         <LoginModal v-if="ini" />
         <RegisterModal v-else />
@@ -51,16 +51,6 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .dialog {
-  .blok-right {
-    width: 70px;
-    height: 70px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-  }
-
   .card-login {
     background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
@@ -86,17 +76,54 @@ export default defineComponent({
       }
     }
   }
+  .blok-right,
+  .blok-bottom,
+  .blok-left,
+  .blok-top,
+  .blok-one {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  }
+
+  .blok-right {
+    z-index: 1px;
+    top: 190px;
+    right: 650px;
+    width: 100px;
+    height: 100px;
+  }
   .blok-bottom {
-    background-color: #fff;
+    z-index: 2;
+    top: 430px;
+    left: 595px;
+    width: 130px;
+    height: 130px;
   }
   .blok-left {
-    background-color: #fff;
+    z-index: 2;
+    top: 550px;
+    right: 650px;
+    width: 80px;
+    height: 80px;
   }
   .blok-top {
-    background-color: #fff;
+    z-index: 2;
+    bottom: 150px;
+    left: 800px;
+    width: 40px;
+    height: 40px;
   }
   .blok-one {
-    background-color: #fff;
+    z-index: 2;
+    top: 150px;
+    left: 850px;
+    width: 60px;
+    height: 60px;
   }
 }
 </style>
