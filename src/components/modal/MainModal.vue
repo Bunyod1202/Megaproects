@@ -1,6 +1,9 @@
 <template>
   <div>
     <q-dialog class="dialog" v-model="confirm" persistent>
+      <div class="blok-right">fergerte</div>
+      <div class="blok-bottom">fergerte</div>
+      <div class="blok-left">fergerte</div>
       <q-card class="card-login">
         <LoginModal v-if="ini" />
         <RegisterModal v-else />
@@ -9,8 +12,6 @@
             v-if="ini"
             flat
             class="btn"
-            color="white"
-            text-color="black"
             label="Регистрация"
             @click="ini = !ini"
           />
@@ -18,8 +19,6 @@
             v-else
             flat
             class="btn"
-            color="white"
-            text-color="black"
             label="Авторизация"
             @click="ini = !ini"
           />
@@ -50,23 +49,40 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .dialog {
+
   .card-login {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
     width: 500px;
     min-height: 200px;
     padding: 20px;
     .register-btn {
-      border-top: 1px solid black;
+      border-top: 1px solid white;
       display: flex;
       align-items: center;
       justify-content: center;
       .btn {
+        color: white;
         margin-top: 10px;
         border-radius: 8px;
         width: 150px;
         height: 30px;
       }
     }
+  }
+  .blok-right{
+
+  }
+   .blok-right{
+    
+  } 
+  .blok-right{
+    
   }
 }
 </style>
