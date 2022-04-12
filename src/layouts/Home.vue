@@ -28,7 +28,7 @@
         </div>
         <Carusel />
       </div>
-      <div class="erorr" v-else>erorr</div>
+      <div class="erorr" v-else></div>
     </div>
     <div class="tv-off" v-else>
       <div class="well-come" v-show="wellcome">
@@ -177,6 +177,7 @@ export default defineComponent({
         font-weight: bolder;
       }
     }
+
     .nav {
       height: 100px;
       display: flex;

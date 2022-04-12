@@ -51,7 +51,7 @@
         color="white"
         @click="btnSave"
         text-color="black"
-        label="вайти "
+        label="сахранит  "
       />
     </q-card-section>
   </div>
@@ -108,15 +108,7 @@ export default defineComponent({
       text-align: center;
     }
   }
-  .input-group {
-    .input {
-      margin-top: 15px;
-      color: #000;
-      border-radius: 8px;
 
-      background-color: #fff;
-    }
-  }
   .btn-save {
     display: flex;
     align-items: center;
@@ -127,7 +119,7 @@ export default defineComponent({
       box-shadow: 0px 0px 1px 1px black;
       color: white;
       border-radius: 8px;
-      width: 100px;
+      width: 150px;
       height: 30px;
     }
   }
@@ -153,5 +145,18 @@ export default defineComponent({
   .q-field__native {
     color: black !important;
   }
+}
+.q-field--standout .q-field__control {
+  margin-top: 15px;
+  color: #000;
+  border-radius: 8px;
+  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 </style>
