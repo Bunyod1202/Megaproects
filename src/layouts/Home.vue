@@ -3,7 +3,7 @@
   <div class="fon" :class="{ show: hover }">
     <div class="tv" v-if="offs">
       <div class="well-come" v-show="wellcome">
-        <div class="name">Well come <q-spinner color="white" size="1em" /></div>
+        <div class="name">Wellcome <q-spinner color="white" size="1em" /></div>
       </div>
       <div class="sayd" v-if="step">
         <div class="nav">

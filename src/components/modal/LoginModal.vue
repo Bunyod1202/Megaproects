@@ -10,6 +10,7 @@
         ref="inputRef"
         v-model="lastName"
         label="имя"
+        :rules="[input1 === true || 'Please use maximum 3 characters']"
       />
       <q-input
         class="input input-password"
@@ -18,6 +19,7 @@
         v-model="password"
         label="пароль "
         :type="isPwd ? 'password' : 'text'"
+        :rules="[input2 === true || 'Please use maximum 3 characters']"
       >
         <template v-slot:append>
           <q-icon
@@ -57,6 +59,8 @@ export default defineComponent({
   setup() {
     const add = ref(true);
     const user = ref(false);
+    const input1 = ref(false);
+    const input2 = ref(false);
     let lastName = ref("");
     let password = ref("");
     let myPassword = ref("2002");
@@ -73,18 +77,23 @@ export default defineComponent({
       add,
       user,
       inputRef,
+      input,
       btnSave() {
         if (
           lastName.value == myName.value &&
           password.value == myPassword.value
         ) {
           add.value = false;
+        } else {
+          input1 = true;
         }
         if (
           lastName.value == userName.value &&
           password.value == userPassword.value
         ) {
           user.value = true;
+        } else {
+          input2 = true;
         }
         reset();
       },
