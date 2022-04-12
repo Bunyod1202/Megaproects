@@ -88,6 +88,7 @@ export default defineComponent({
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    transition: 2s linear;
   }
 
   .blok-right {
@@ -96,6 +97,9 @@ export default defineComponent({
     right: 650px;
     width: 100px;
     height: 100px;
+    animation-name: card;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
   }
   .blok-bottom {
     z-index: 2;
@@ -103,13 +107,19 @@ export default defineComponent({
     left: 595px;
     width: 130px;
     height: 130px;
+    animation-name: card1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
   }
   .blok-left {
     z-index: 2;
-    top: 550px;
+    top: 530px;
     right: 650px;
     width: 80px;
     height: 80px;
+    animation-name: card2;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
   }
   .blok-top {
     z-index: 2;
@@ -117,13 +127,245 @@ export default defineComponent({
     left: 800px;
     width: 40px;
     height: 40px;
+    animation-name: card3;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
   }
   .blok-one {
     z-index: 2;
-    top: 150px;
+    top: 100px;
     left: 850px;
     width: 60px;
     height: 60px;
+    animation-name: card4;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+  }
+}
+@keyframes card {
+  0% {
+    transform: scale(1);
+    transition: 3s linear;
+  }
+  50% {
+    transition: 3s linear;
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+    transition: 3s linear;
+  }
+}
+@keyframes card1 {
+  0% {
+    transform: scale(1);
+    transition: 4s linear;
+  }
+  50% {
+    transition: 4s linear;
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+    transition: 4s linear;
+  }
+}
+@keyframes card2 {
+  0% {
+    transform: scale(1);
+    transition: 4s linear;
+  }
+  50% {
+    transition: 4s linear;
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+    transition: 4s linear;
+  }
+}
+@keyframes card3 {
+  0% {
+    transform: scale(1);
+    transition: 4s linear;
+  }
+  50% {
+    transition: 4s linear;
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+    transition: 4s linear;
+  }
+}
+@keyframes card4 {
+  0% {
+    transform: scale(1);
+    transition: 4s linear;
+  }
+  50% {
+    transition: 4s linear;
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+    transition: 4s linear;
+  }
+}
+@media (max-width: 1700px) {
+  .dialog {
+    .card-login {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      width: 500px;
+      min-height: 200px;
+      padding: 20px;
+      .register-btn {
+        border-top: 1px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .btn {
+          color: white;
+          margin-top: 10px;
+          border-radius: 8px;
+          width: 150px;
+          height: 30px;
+        }
+      }
+    }
+    .blok-right,
+    .blok-bottom,
+    .blok-left,
+    .blok-top,
+    .blok-one {
+      position: absolute;
+      backdrop-filter: blur(5px);
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    }
+
+    .blok-right {
+      z-index: 1px;
+      top: 70px;
+      right: 450px;
+      width: 100px;
+      height: 100px;
+    }
+    .blok-bottom {
+      z-index: 2;
+      top: 350px;
+      left: 400px;
+      width: 130px;
+      height: 130px;
+    }
+    .blok-left {
+      z-index: 2;
+      top: 450px;
+      right: 450px;
+      width: 80px;
+      height: 80px;
+    }
+    .blok-top {
+      z-index: 2;
+      bottom: 50px;
+      left: 650px;
+      width: 40px;
+      height: 40px;
+    }
+    .blok-one {
+      z-index: 2;
+      top: 20px;
+      left: 700px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+}
+@media (max-width: 420px) {
+  .dialog {
+    .card-login {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      width: 500px;
+      min-height: 200px;
+      padding: 20px;
+      .register-btn {
+        border-top: 1px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .btn {
+          color: white;
+          margin-top: 10px;
+          border-radius: 8px;
+          width: 150px;
+          height: 30px;
+        }
+      }
+    }
+    .blok-right,
+    .blok-bottom,
+    .blok-left,
+    .blok-top,
+    .blok-one {
+      position: absolute;
+      backdrop-filter: blur(5px);
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    }
+
+    .blok-right {
+      z-index: 1px;
+      top: 90px;
+      right: -10px;
+      width: 60px;
+      height: 60px;
+    }
+    .blok-bottom {
+      z-index: 2;
+      top: 350px;
+      left: -30px;
+      width: 70px;
+      height: 70px;
+    }
+    .blok-left {
+      z-index: 2;
+      top: 450px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+    }
+    .blok-top {
+      z-index: 2;
+      bottom: 50px;
+      left: 50px;
+      width: 30px;
+      height: 30px;
+    }
+    .blok-one {
+      z-index: 2;
+      top: 30px;
+      left: 100px;
+      width: 40px;
+      height: 40px;
+    }
   }
 }
 </style>
