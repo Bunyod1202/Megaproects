@@ -5,7 +5,7 @@
       <div class="well-come" v-show="wellcome">
         <div class="name">Well come <q-spinner color="white" size="1em" /></div>
       </div>
-      <div class="sayd">
+      <div class="sayd" v-if="step">
         <div class="nav">
           <div class="nav-item">
             <div class="nav-link">
@@ -28,6 +28,7 @@
         </div>
         <Carusel />
       </div>
+      <div class="erorr" v-else>erorr</div>
     </div>
     <div class="tv-off" v-else>
       <div class="well-come" v-show="wellcome">
@@ -69,6 +70,7 @@
           :class="{ color: hover }"
           :disabled="disabled"
           rounded
+          @click="step = true"
           >Auto</q-btn
         >
         <q-btn
@@ -102,6 +104,7 @@ export default defineComponent({
     let disable = ref(false);
     let slide = ref(1);
     let autoplay = ref(true);
+    let step = ref(false);
 
     function btnClickLight() {
       hover.value = !hover.value;
@@ -132,6 +135,7 @@ export default defineComponent({
       wellcome,
       slide,
       autoplay,
+      step,
     };
   },
 });
