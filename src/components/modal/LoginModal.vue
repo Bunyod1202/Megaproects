@@ -10,7 +10,6 @@
         ref="inputRef"
         v-model="lastName"
         label="имя"
-        :rules="[(val) => val.length <= 6 || 'Please use maximum 6 characters']"
       />
       <q-input
         class="input input-password"
@@ -19,7 +18,6 @@
         v-model="password"
         label="пароль "
         :type="isPwd ? 'password' : 'text'"
-        :rules="[(val) => val.length <= 4 || 'Please use maximum 4 characters']"
       >
         <template v-slot:append>
           <q-icon
@@ -30,13 +28,7 @@
       ></q-input>
     </q-card-section>
     <q-card-section class="btn-save">
-      <q-btn
-        class="btn"
-        color="white"
-        @click="btnSave"
-        text-color="black"
-        label="вайти "
-      />
+      <q-btn rounded class="btn" @click="btnSave" label="вайти " />
     </q-card-section>
   </div>
   <div class="welcome" v-else>
@@ -114,7 +106,7 @@ export default defineComponent({
     .text {
       font-size: 35px;
       font-weight: bolder;
-      color: black;
+      color: white;
       text-align: center;
     }
   }
@@ -123,8 +115,14 @@ export default defineComponent({
       margin-top: 15px;
       color: #000;
       border-radius: 8px;
-
-      background-color: #fff;
+      box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.5);
+      background-color: rgba(255, 255, 255, 0.2);
+      border: none;
+      outline: none;
+      border-radius: 35px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
   }
   .btn-save {
@@ -132,13 +130,16 @@ export default defineComponent({
     align-items: center;
     justify-content: center;
     .btn {
-      background-color: black;
-      border: 1px solid white;
-      box-shadow: 0px 0px 1px 1px black;
-      color: white;
+      background-color: white;
+      border-radius: 35px;
+
+      color: black;
       border-radius: 8px;
       width: 100px;
       height: 30px;
+      &::before {
+        border-radius: 35px;
+      }
     }
   }
 }
@@ -149,14 +150,14 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   position: absolute;
-  height: 90%;
+  height: 100%;
   width: 100%;
   background-color: #fff;
   z-index: 2;
   .btn {
-    width: 95%;
-    height: 100%;
-    margin-top: 20px;
+    width: 90%;
+    height: 80%;
+    margin-top: 10px;
     background-color: rgba(0, 0, 0, 0);
     box-shadow: 0px 0px 10px 5px;
     &:hover {
@@ -185,5 +186,15 @@ export default defineComponent({
   .q-field__native {
     color: black !important;
   }
+}
+.q-field--standout .q-field__control {
+  background: rgba(255, 255, 255, 0);
+  border-radius: 35px;
+  padding: 0px 20px;
+}
+.q-field--labeled .q-field__native,
+.q-field--labeled .q-field__prefix,
+.q-field--labeled .q-field__suffix {
+  background-color: rgba(255, 255, 255, 0);
 }
 </style>

@@ -289,9 +289,9 @@ export default defineComponent({
         color: #fff;
         margin-left: 15px;
         &:hover {
-          color: #2dfc52;
-          filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 5px #2dfc52)
-            drop-shadow(0 0 15px #2dfc52);
+          color: #2d98fc !important;
+          filter: drop-shadow(0 0 2px #2d98fc) drop-shadow(0 0 5px #2d98fc)
+            drop-shadow(0 0 15px #2d98fc);
         }
         &.color {
           background-color: #fff !important;

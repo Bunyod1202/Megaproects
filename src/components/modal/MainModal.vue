@@ -1,9 +1,11 @@
 <template>
   <div>
     <q-dialog class="dialog" v-model="confirm" persistent>
-      <div class="blok-right">fergerte</div>
-      <div class="blok-bottom">fergerte</div>
-      <div class="blok-left">fergerte</div>
+      <div class="blok-right">fergeddddddddddrrte</div>
+      <div class="blok-bottom">fergrerte</div>
+      <div class="blok-left">fergredddddddrte</div>
+      <div class="blok-one">fergrerte</div>
+      <div class="blok-top">fergrerte</div>
       <q-card class="card-login">
         <LoginModal v-if="ini" />
         <RegisterModal v-else />
@@ -49,6 +51,15 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .dialog {
+  .blok-right {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  }
 
   .card-login {
     background-color: rgba(255, 255, 255, 0.1);
@@ -75,14 +86,17 @@ export default defineComponent({
       }
     }
   }
-  .blok-right{
-
+  .blok-bottom {
+    background-color: #fff;
   }
-   .blok-right{
-    
-  } 
-  .blok-right{
-    
+  .blok-left {
+    background-color: #fff;
+  }
+  .blok-top {
+    background-color: #fff;
+  }
+  .blok-one {
+    background-color: #fff;
   }
 }
 </style>
